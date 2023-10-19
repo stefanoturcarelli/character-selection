@@ -15,18 +15,17 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 600;
-  min-height: 100dvh;
 }
 
 section {
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .wrap {
@@ -38,8 +37,8 @@ section {
 }
 
 .selected-character {
-  width: 400px;
-  height: 400px;
+  width: 20rem;
+  height: 20rem;
   border-radius: 50%;
   background-color: #534d4d;
 }
@@ -47,7 +46,7 @@ section {
 img {
   border: 1px solid #ffffff00;
   border-radius: 50%;
-  width: 100px;
+  width: 6rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -90,6 +89,6 @@ img:hover {
 }
 
 .is-full {
-  width: 400px;
-  height: 400px;
+  width: 20rem;
+  height: 20rem;
 }
