@@ -29,6 +29,10 @@ section {
   gap: 10px;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
