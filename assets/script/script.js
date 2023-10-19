@@ -27,6 +27,8 @@ save.addEventListener("click", () => {
     images[i].classList.add("is-hidden");
     // Make the button "SAVE" disappear
     save.classList.add("is-hidden");
+    // Make the button "REMOVE" reappear
+    remove.classList.remove("is-hidden");
   }
 });
 
@@ -38,6 +40,8 @@ remove.addEventListener("click", () => {
     images[i].classList.remove("is-hidden");
 		// Make the button "SAVE" reappear
 		save.classList.remove("is-hidden");
+    // Make the button "REMOVE" disappear
+    remove.classList.add("is-hidden");
   }
 });
 
