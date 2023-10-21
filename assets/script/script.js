@@ -7,6 +7,8 @@
  * todo: Make the image the user selected fill the entire <div> with the id "selected-character"
  */
 
+// * Get and store them all
+
 // Get the images
 const images = document.querySelectorAll('img');
 
@@ -18,6 +20,8 @@ const remove = document.getElementById('remove');
 
 // Get the div with the id "selected-character"
 const selectedCharacter = document.getElementById('selected-character');
+
+// * Add event listeners
 
 // Add an event listener to the button "SAVE"
 save.addEventListener('click', () => {
@@ -31,6 +35,7 @@ save.addEventListener('click', () => {
     remove.classList.remove('is-hidden');
   }
 });
+// todo: if user has not selected an image dont' allow to save btn to work
 
 // Add an event listener to the button "REMOVE"
 remove.addEventListener('click', () => {
@@ -48,7 +53,8 @@ remove.addEventListener('click', () => {
 // Add an event listener to the images
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('click', () => {
-    // Make the image the user selected appear in the <div> with the id "selected-character"
+    // Make the image the user selected appear in the <div> with the 
+    // id "selected-character"
     selectedCharacter.innerHTML = images[i].outerHTML;
     // Make the image the user selected fill the entire <div> with the id
     // "selected-character"
