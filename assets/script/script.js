@@ -1,65 +1,33 @@
 'use strict';
-
-/**
- * todo: Make the images disappear when the user clicks on the button "SAVE"
- * todo: Make the images reappear, and the image the user selected disappear, when the user clicks on the button "REMOVE"
- * todo: Make the image the user selected appear in the <div> with the id "selected-character"
- * todo: Make the image the user selected fill the entire <div> with the id "selected-character"
- */
-
-// * Get and store them all
-
-// Get the images
-const images = document.querySelectorAll('img');
-
-// Get the button "SAVE"
-const save = document.getElementById('save');
-
-// Get the button "REMOVE"
-const remove = document.getElementById('remove');
-
-// Get the div with the id "selected-character"
-const selectedCharacter = document.getElementById('selected-character');
-
-// * Add event listeners
-
-// Add an event listener to the button "SAVE"
-save.addEventListener('click', () => {
-  // Loop through the images
-  for (let i = 0; i < images.length; i++) {
-    // Make the images disappear
-    images[i].classList.add('is-hidden');
-    // Make the button "SAVE" disappear
-    save.classList.add('is-hidden');
-    // Make the button "REMOVE" reappear
-    remove.classList.remove('is-hidden');
-  }
-});
-// todo: if user has not selected an image dont' allow to save btn to work
-
-// Add an event listener to the button "REMOVE"
-remove.addEventListener('click', () => {
-  // Loop through the images
-  for (let i = 0; i < images.length; i++) {
-    // Make the images reappear
-    images[i].classList.remove('is-hidden');
-    // Make the button "SAVE" reappear
-    save.classList.remove('is-hidden');
-    // Make the button "REMOVE" disappear
-    remove.classList.add('is-hidden');
-  }
-});
-
-// Add an event listener to the images
-for (let i = 0; i < images.length; i++) {
-  images[i].addEventListener('click', () => {
-    // Make the image the user selected appear in the <div> with the 
-    // id "selected-character"
-    selectedCharacter.innerHTML = images[i].outerHTML;
-    // Make the image the user selected fill the entire <div> with the id
-    // "selected-character"
-    selectedCharacter.firstChild.classList.add('is-full');
-    // Remove hover effect from the image the user selected
-    selectedCharacter.firstChild.classList.remove('small-img');
-  });
+// Utility functions
+function onEvent(event, selector, callback) {
+  return selector.addEventListener(event, callback);
 }
+function select(selector, parent = document) {
+  return parent.querySelector(selector);
+}
+function selectById(selector, parent = document) {
+  return parent.getElementById(selector);
+}
+function selectAll(selector, parent = document) {
+  return [...parent.querySelectorAll(selector)];
+}
+function create(element, parent = document) {
+  return parent.createElement(element);
+}
+function print(...args) {
+  console.log(args.join(', '));
+}
+// Main code
+const options = selectAll('.option');
+const avatar = select('.avatar');
+const thumbnails = select('.thumbnails');
+const image = create('img');
+options.forEach((option) => {
+  onEvent('click', option, function () {
+    image.src = this.attributes[0].nodeValue; // copying the 'src' attribute
+    image.alt = this.attributes[1].nodeValue; // copying the 'alt' attribute
+    avatar.appendChild(image); // Appending an 'img' element to the big div
+    print(this.dataset.character);
+  });
+});
