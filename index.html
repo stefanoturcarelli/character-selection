@@ -20,26 +20,35 @@
 	<script src="./assets/script/script.js" defer></script>
 </head>
 
-<body class="flex flex-column">
-	<section>
-		<div id="selected-character" class="flex selected-character">
-			Choose a character
+<body>
+	<main>
+		<div class="container center">
+			<section>
+				<div class="avatar"></div>
+				<div class="thumbnails">
+					<figure>
+						<img 
+						src="./assets/img/evil.png" 
+						alt="Darth Vader" 
+						class="option" 
+						data-character="Darth Vader">
+					</figure>
+					<figure>
+						<img src="./assets/img/pilot.png" alt="C3PO" class="option" data-character="C3PO">
+					</figure>
+					<figure>
+						<img src="./assets/img/hero.png" alt="Mandalorian" class="option" data-character="Mandalorian">
+					</figure>
+					<figure>
+						<img src="./assets/img/alien.png" alt="Grogu" class="option" data-character="Grogu">
+					</figure>
+					<figure>
+						<img src="./assets/img/child.png" alt="BB8" class="option" data-character="BB8">
+					</figure>
+				</div>
+			</section>
 		</div>
-	</section>
-	<div class="flex flex-column">
-		<section class="flex wrap">
-			<img class="small-img" src="./assets/img/evil.png" alt="Darth Vader">
-			<img class="small-img" src="./assets/img/pilot.png" alt="C3PO">
-			<img class="small-img" src="./assets/img/hero.png" alt="Mandalorian">
-			<img class="small-img" src="./assets/img/alien.png" alt="Grogu">
-			<img class="small-img" src="./assets/img/child.png" alt="BB8">
-		</section>
-		<section>
-			<button id="remove" class="btn remove is-hidden">REMOVE</button>
-			<button id="save" class="btn save">SAVE</button>
-		</section>
-	</div>
-
+	</main>
 </body>
 
 </html>
