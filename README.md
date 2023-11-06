@@ -1,2 +1,1 @@
-# character-selection
- 
+# Character selection
